@@ -1,0 +1,13 @@
+[unit]
+Description=grafana ksc daemon
+After=network.target
+
+[Service]
+User=grafana
+Group=grafana
+WorkingDirectory=/usr/share/grafana/GrafanaKsc
+ExecStart=/usr/share/grafana/GrafanaKsc/venv/bin/python /usr/share/grafana/GrafanaKsc/main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
